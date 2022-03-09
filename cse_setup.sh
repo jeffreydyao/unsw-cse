@@ -58,7 +58,7 @@ read student_number
 cat <<EOF > +.ts
 const completionSpec: Fig.Spec = {
   name: "+",
-  description: "UNSW CSE shortcuts",z
+  description: "UNSW CSE shortcuts",
   subcommands: [
     {
       icon: "🔌",
