@@ -1,7 +1,7 @@
 #!/bin/sh/
 # Sets up SSHFS to mount and access your CSE filesystem
 # locally, and terminal shortcuts for doing so using Fig.
-# Works on macOS.
+# Works on macOS only.
 # Credits: https://abiram.me/cse-sshfs
 # Written by Jeffrey Yao (@jeffreydyao on GitHub)
 ############################################################
