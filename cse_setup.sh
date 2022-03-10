@@ -18,6 +18,9 @@ if [[ $? != 0 ]] ; then
     # Install Homebrew
     echo "🔮 ${bold}Installing Homebrew${bold}"
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    # Add Homebrew installation location to path
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ${HOME}/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
 else
     # Update Homebrew
     brew update
