@@ -12,6 +12,15 @@ normal=$(tput sgr0)
 
 cd ~
 
+# Set Homebrew prefix depending on processor architecture
+if [[ "$(/usr/bin/uname -m)" == "arm64" ]] ; then
+    # On ARM macOS, this script installs to /opt/homebrew only
+    HOMEBREW_PREFIX="/opt/homebrew"
+    else
+    # On Intel macOS, this script installs to /usr/local only
+    HOMEBREW_PREFIX="/usr/local"
+fi
+
 # Check to see if Homebrew is installed, and install if not
 which -s brew
 if [[ $? != 0 ]] ; then
@@ -19,8 +28,8 @@ if [[ $? != 0 ]] ; then
     echo "🔮 ${bold}Installing Homebrew${bold}"
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     # Add Homebrew installation location to path
-    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ${HOME}/.zprofile
-    eval "$(/opt/homebrew/bin/brew shellenv)"
+    echo 'eval "$(${HOMEBREW_PREFIX}/bin/brew shellenv)"' >> ${HOME}/.zprofile
+    eval "$(${HOMEBREW_PREFIX}/bin/brew shellenv)"
 else
     # Update Homebrew
     brew update
