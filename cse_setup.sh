@@ -131,5 +131,5 @@ open /Applications/Fig.app
 
 # Print success message.
 echo "✅ ${bold}Your machine's configured to connect to CSE servers now, with terminal shortcuts!${bold}"
-echo "⚠️ After setting Fig up, you must restart for everything to work properly."
+echo "❗️ After setting Fig up, you must restart for everything to work properly."
 echo "💡 In any terminal, enter + then hit space for CSE connection shortcuts. You can add more by following this guide: https://fig.io/docs/guides/personal-shortcuts"
