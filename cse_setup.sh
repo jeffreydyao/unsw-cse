@@ -21,6 +21,24 @@ if [[ "$(/usr/bin/uname -m)" == "arm64" ]] ; then
     HOMEBREW_PREFIX="/usr/local"
 fi
 
+# Set shell profile depending on shell used
+case "${SHELL}" in
+  */bash*)
+    if [[ -r "${HOME}/.bash_profile" ]]
+    then
+      shell_profile="${HOME}/.bash_profile"
+    else
+      shell_profile="${HOME}/.profile"
+    fi
+    ;;
+  */zsh*)
+    shell_profile="${HOME}/.zprofile"
+    ;;
+  *)
+    shell_profile="${HOME}/.profile"
+    ;;
+esac
+
 # Check to see if Homebrew is installed, and install if not
 which -s brew
 if [[ $? != 0 ]] ; then
@@ -28,7 +46,7 @@ if [[ $? != 0 ]] ; then
     echo "🔮 ${bold}Installing Homebrew${bold}"
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     # Add Homebrew installation location to path depending on Homebrew prefix
-    echo 'eval "$(${HOMEBREW_PREFIX}/bin/brew shellenv)"' >> ${HOME}/.zprofile
+    echo 'eval "$(${HOMEBREW_PREFIX}/bin/brew shellenv)"' >> ${shell_profile}
     eval "$(${HOMEBREW_PREFIX}/bin/brew shellenv)"
 else
     # Update Homebrew
