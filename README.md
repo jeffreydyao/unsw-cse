@@ -1,7 +1,7 @@
 # unsw-cse
 Interface with UNSW CSE's systems in style.
 
-![image](https://user-images.githubusercontent.com/33971845/159203829-dfba518c-1fe5-4a86-9c09-1d85071e3112.png)
+![Screenshot of terminal shortcuts](https://user-images.githubusercontent.com/33971845/159203965-d76851c3-4d2c-4368-9d35-a5fa6dda8731.png)
 
 ## Features
 - Access your CSE files locally via `sshfs`
@@ -10,6 +10,7 @@ Interface with UNSW CSE's systems in style.
   - Opening a new terminal session on UNSW CSE's servers
   - Opening VS Code in your CSE drive
   - Disconnecting from UNSW CSE
+
 
 ## Works with
 macOS (at the moment)
