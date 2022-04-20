@@ -16,4 +16,8 @@ Interface with UNSW CSE's systems in style.
 macOS (at the moment)
 
 ## How to use
-_Coming soon - https://gist.github.com/n0ts/146c65b95a80b0a90934_
+In your terminal, run 
+```bash
+bash <(curl -s https://raw.githubusercontent.com/jeffreydyao/unsw-cse/main/cse_setup.sh)
+````
+_If that doesn't work, try one of the other commands here. https://gist.github.com/n0ts/146c65b95a80b0a90934_
